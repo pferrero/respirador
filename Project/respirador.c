@@ -136,7 +136,7 @@ int main(void){
 	//         queue    , buffer       , cant. max de tick que debe permanecer en blocked hasta que haya espacio en la queue. 0 no espera si el buffer está lleno
 	xQueueSend(infoQueue, texto_inicial, (TickType_t) 0);
 	xSemaforoRespiracion = xSemaphoreCreateBinary();
-	xSemaphoreTake(xSemaforoRespiracion, 0);
+	xSemaphoreGive(xSemaforoRespiracion);
 	tiempo_respiracion = 1000;
 
 	// Iniciar el Scheduler
